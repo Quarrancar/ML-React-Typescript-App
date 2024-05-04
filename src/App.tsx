@@ -26,7 +26,7 @@ function App() {
         <section className='min-h-screen flex flex-col'>
         <Header onTitleClick={resetToHomepage} />
           { isAudioAvailable ? 
-            ( <DisplayAvailableFile userManualAudioReset={userManualAudioReset} file={file} setAudioStream={setAudioStream}/>  )
+            ( <DisplayAvailableFile userManualAudioReset={userManualAudioReset} file={file}  onTitleClick={resetToHomepage} setAudioStream={setAudioStream}/>  )
           : 
             ( <Homepage setFile={setFile} setAudioStream={setAudioStream} />  )
           }

@@ -26,23 +26,23 @@ const { setFile, setAudioStream } = props
                 </span>
             </button>
             <p>
-                <label className='text-basetext-blue cursor-pointer hover:text-blue-800 duration-200 ml-4'>
-                    Or <span className='text-blue-400 hover:text-blue-800'>Upload</span> an .mp3 or .wave file <input 
-  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      const uploadFile = e.target.files[0];
-      // Check for file type if necessary
-      if (uploadFile.type === "audio/mpeg" || uploadFile.type === "audio/wav") {
-        setFile(uploadFile);
-      } else {
-        alert('Only MP3 or WAV files are allowed.');
-      }
-    }
-  }} 
-  className='hidden' 
-  type='file' 
-  accept='.mp3, .wav'  // Corrected .wave to .wav
-/>
+                <label className='text-basetext-blue cursor-pointer duration-200 ml-4'>
+                    Or <span className='text-blue-400 hover:text-blue-800'>upload</span> an .mp3 or .wav file <input 
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                          if (e.target.files && e.target.files.length > 0) {
+                            const uploadFile = e.target.files[0];
+                            // Check for file type if necessary
+                            if (uploadFile.type === "audio/mpeg" || uploadFile.type === "audio/wav") {
+                              setFile(uploadFile);
+                            } else {
+                              alert('Only .MP3 or .WAV/.WAVE files are allowed.');
+                            }
+                          }
+                        }} 
+                        className='hidden' 
+                        type='file' 
+                        accept='.mp3, .wav'  // Corrected .wave to .wav
+                        />
                 </label>
             </p>
             <p className='text-slate-400 italic mt-12 mb-4'>

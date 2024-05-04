@@ -5,6 +5,7 @@
 
 * {
   font-family: 'Noto Sans', sans-serif;
+  transition-duration: 200ms;
 }
 
 h1, h2, h3, .bold {
@@ -13,20 +14,30 @@ h1, h2, h3, .bold {
 
 .NavigationHeaderButton {
   background: #ffffff;
-  box-shadow: 0px 12px 24px #2f7ede61;
+  box-shadow: 0px 12px 12px #2f7ede61;
 }
 
 .NavigationHeaderButton:hover {
   opacity: 0.6;
+  transition-duration: 200ms;
 }
-
 
 .RecordButton {
   background: #ffffff;
   box-shadow: 0px 12px 12px #2f7ede61;
-  transition-duration: 200ms;
 }
 
 .RecordButton:hover {
   opacity: 0.6;
+  transition-duration: 200ms;
+}
+
+.AfterFileUploadButton {
+  background: #ffffff;
+  box-shadow: 0px 12px 12px #2f7ede61;
+}
+
+.AfterFileUploadButton:hover {
+  opacity: 0.6;
+  transition-duration: 200ms;
 }
