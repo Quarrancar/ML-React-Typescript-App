@@ -27,11 +27,27 @@ const { setFile, setAudioStream } = props
             </button>
             <p>
                 <label className='text-basetext-blue cursor-pointer hover:text-blue-800 duration-200 ml-4'>
-                    Or <span className='text-blue-400 hover:text-blue-800'>Upload</span> an .mp3 or .wave file <input onChange={(e) => {const uploadFile = e.target.files[0] setFile(uploadFile)}} className='hidden' type='file' accept='.mp3, .wave '></input>
+                    Or <span className='text-blue-400 hover:text-blue-800'>Upload</span> an .mp3 or .wave file <input 
+  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const uploadFile = e.target.files[0];
+      // Check for file type if necessary
+      if (uploadFile.type === "audio/mpeg" || uploadFile.type === "audio/wav") {
+        setFile(uploadFile);
+      } else {
+        alert('Only MP3 or WAV files are allowed.');
+      }
+    }
+  }} 
+  className='hidden' 
+  type='file' 
+  accept='.mp3, .wav'  // Corrected .wave to .wav
+/>
                 </label>
             </p>
             <p className='text-slate-400 italic mt-12 mb-4'>
                 Let's create some verbal magic
+                <i class="fa-solid fa-wand-magic-sparkles ml-2"></i>
             </p>
         </main>
   )

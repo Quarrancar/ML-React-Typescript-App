@@ -1,23 +1,30 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import Homepage from './components/Homepage';
+import Homepage from "./components/Homepage";
+import DisplayAvailableFile from './components/DisplayAvailableFile'
 
 
 function App() {
-  const [file, setFile] = useState(null)
-  const [audioStream, setAudioStream] = useState(null)
-  const isAudioAvailable = file || audioStream
+  const [file, setFile] = useState(null);
+  const [audioStream, setAudioStream] = useState(null);
+  const isAudioAvailable = file || audioStream;
+
 
   function userManualAudioReset() {
     setFile(null)
     setAudioStream(null)
   }
 
+  function resetToHomepage() {
+    userManualAudioReset();
+  }
+
+
   return (
     <>
       <div className='flex flex-col max-w-[1200px] mx-auto w-full'>
         <section className='min-h-screen flex flex-col'>
-          <Header />
+        <Header onTitleClick={resetToHomepage} />
           { isAudioAvailable ? 
             ( <DisplayAvailableFile userManualAudioReset={userManualAudioReset} file={file} setAudioStream={setAudioStream}/>  )
           : 
@@ -26,9 +33,7 @@ function App() {
         </section>
 
         <footer>
-
         </footer>
-
       </div>
     </>
   )

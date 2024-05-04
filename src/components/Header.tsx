@@ -1,10 +1,14 @@
 import React from 'react';
 
-export default function Header() {
+interface HeaderProps {
+  onTitleClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onTitleClick }) => {
   return (
     <header className='flex items-center justify-between gap-4 p-4'>
-        <h1 className='flex items-center font-light'>
-            <img src="/transcribewizard.svg" alt="TranscribeWizard Logo" className="mr-2" style={{ height: '2rem' }} /> {/* Logo added here */}
+        <h1 onClick={onTitleClick} className='flex items-center font-light cursor-pointer'>
+            <img src="/transcribewizard.svg" alt="TranscribeWizard Logo" className="mr-2" style={{ height: '2rem' }} />
             Transcribe
             <span className='font-bold text-blue-400'>Wizard</span>
         </h1>
@@ -14,4 +18,6 @@ export default function Header() {
         </button>
     </header>
   );
-}
+};
+
+export default Header;
