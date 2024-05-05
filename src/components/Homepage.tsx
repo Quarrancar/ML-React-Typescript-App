@@ -100,8 +100,8 @@ export default function Homepage(props: {
         </span>
         Translate
       </h3>
-      <button onClick={recordingStatus === 'recording' ? stopRecording :    startRecording} className="flex items-center text-base justify-between gap-4    my-4 mx-auto w-72 max-w-full RecordButton px-4 py-2 text-blue hover:text-white   rounded-md bg-blue-400 hover:bg-blue-800">
-        <p>{recordingStatus === 'inactive' ? 'Record' : `Stop recording`}</p>
+      <button onClick={recordingStatus  ===  'recording'  ?  stopRecording  :  startRecording} className="flex items-center text-base justify-between gap-4    my-4 mx-auto w-72 max-w-full RecordButton px-4 py-2 text-blue hover:text-white   rounded-md bg-blue-400 hover:bg-blue-800">
+        <p>{recordingStatus === 'inactive' ? 'Record'  : `Stop recording`}</p>
         <span className="ml-2 mr-2 hover:text-white flex items-center gap-2">
           {duration !== 0 && (<p className='text-sm'>{duration}s</p>)}
           <i className={"fa-solid fa-microphone " + (recordingStatus ===    'recording' ? 'text-red-300' : "")}></i>
@@ -109,7 +109,7 @@ export default function Homepage(props: {
       </button>
       <p>
         <label className="text-basetext-blue cursor-pointer duration-200 ml-4">
-          Or <span className="text-blue-400 hover:text-blue-800">upload</span>
+          Or <span className="text-blue-400 hover:text-blue-800 mr-1">upload</span>
           an .mp3 or .wav file{" "}
           <input
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
